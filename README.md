@@ -1,4 +1,4 @@
-HTML5 Project Start Script
+HTML5 Project Kickoff
 ================
 
 Default Gruntfile.coffee Tasks
@@ -14,3 +14,12 @@ Default package.json
 Install.js
 
 	Creates base struture for development
+
+
+### How to Use
+
+Copy all files to your project root
+
+	`npm install`
+
+	`npm start`
