@@ -1,17 +1,17 @@
 {
-  "name": "glass",
+  "name": "project-id",
   "version": "0.0.1",
-  "description": "google glass | video editor",
+  "description": "project description",
   "main": "Gruntfile.coffee",
-  "author": "silvio paganini <silvio@unit9.com> UNIT9",
+  "author": "silvio paganini <s2paganini@gmail.com> @silviopaganini",
   "license": "BSD",
   "bin": "website",
   "scripts": {
     "start": "node install.js"
   },
   "repository": {
-    "type": "svn",
-    "url": "http://svn572.dev.unit9.net/svn"
+    "type": "git",
+    "url": ""
   },
   "devDependencies": {
     "grunt": "~0.4.1",
