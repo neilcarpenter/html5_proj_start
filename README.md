@@ -1,6 +1,6 @@
 HTML5 Project Kickoff
 ================
-Because we all love automation =) Creates base struture for development with [Grunt](http://gruntjs.com/) and [NPM](http://npmjs.com).
+Because we all love automation =) Creates base structure for development with [Grunt](http://gruntjs.com/) and [NPM](http://npmjs.com).
 
 * Default Gruntfile.coffee Tasks
 
