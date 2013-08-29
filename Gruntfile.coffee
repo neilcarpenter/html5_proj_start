@@ -97,6 +97,32 @@ module.exports = (grunt) ->
                 compile:
                     files : ['<%= paths.release.cms %>']
 
+        # Modernizr custom build (based on css classes / js obj references)
+        modernizr :
+            devFile : "website/js/vendor/modernizr-dev.js"
+            outputFile : "website/js/vendor/modernizr-custom.js"
+
+            extra :
+                shiv :       true
+                printshiv : false
+                load :       true
+                mq :        false
+                cssclasses : true
+
+            extensibility :
+                addtest :      false
+                prefixed :     false
+                teststyles :   false
+                testprops :    false
+                testallprops : false
+                hasevents :    false
+                prefixes :     false
+                domprefixes :  false
+
+            parseFiles : true
+
+            files : ['<%= paths.release.bin %>/**/*.js', '<%= paths.release.bin %>/**/*.css']
+
 
     # Load tasks
     grunt.loadNpmTasks "grunt-contrib-watch"
@@ -105,10 +131,12 @@ module.exports = (grunt) ->
     grunt.loadNpmTasks "grunt-contrib-uglify"
     grunt.loadNpmTasks "grunt-contrib-concat"
     grunt.loadNpmTasks "grunt-coffee-percolator"
+    grunt.loadNpmTasks "grunt-modernizr"
 
 
     # Register tasks.
-    grunt.registerTask "default", ["percolator:main", "stylus", "uglify"]
+    grunt.registerTask "default", ["percolator:main", "stylus", "uglify", "modernizr"]
     grunt.registerTask "w", ["percolator:main", "stylus", "uglify", "watch:main"]
     grunt.registerTask "cms", ["percolator:cms"]
     grunt.registerTask "v", ["concat:vendors"]
+    grunt.registerTask "m", "modernizr"

@@ -21,6 +21,7 @@ var BIN = 'website',
     icon        = 'http://www.unit9.com/wp-content/themes/unit9_2011/img/favicon.ico',
     boilerplate = 'https://raw.github.com/h5bp/html5-boilerplate/master/index.html',
     normalize   = 'https://raw.github.com/h5bp/html5-boilerplate/master/css/normalize.css';
+    modernizr   = 'http://modernizr.com/downloads/modernizr-2.6.2.js';
 
 var color = {
     reset : '\x1b[0m',
@@ -53,6 +54,16 @@ function writePluginsJS(callBack)
         } else {
             if(callBack) callBack();
         }
+    });
+}
+
+function writeModernizr(callBack)
+{
+    var m = fs.createWriteStream(BIN + "/js/vendor/modernizr-dev.js");
+    request = http.get(modernizr, function(response) {
+      response.pipe(m);
+
+      if(callBack) callBack();
     });
 }
 
@@ -129,6 +140,7 @@ function setup()
     commandQueue.push({c : createDefaultFolders  , msg : "Folders -> OK"});
     commandQueue.push({c : writeIndexBoilerplate , msg : "Index Boilerplate -> OK"});
     commandQueue.push({c : writePluginsJS        , msg : "Default Plugins -> OK"});
+    commandQueue.push({c : writeModernizr        , msg : "Modernizr -> OK"});
     commandQueue.push({c : writeDefaultIcon      , msg : "Default Icon -> OK"});
     commandQueue.push({c : writeGitIgnore        , msg : "git ignore -> OK"});
     

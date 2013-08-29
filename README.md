@@ -11,6 +11,7 @@ Create the base structure for development with [Grunt](http://gruntjs.com/) and 
 	* Uglify
 	* Stylus
 	* Watch
+	* Modernizr
 	
 
 ### How to Use
